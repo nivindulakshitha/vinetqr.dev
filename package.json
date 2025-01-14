@@ -1,23 +1,44 @@
 {
   "name": "vinetqr-dev-plugin",
   "version": "1.0.0",
-  "description": "A Vite plugin to generate QR codes for network URLs",
+  "description": "A Vite plugin to generate QR codes for network URLs during development for easy mobile access",
   "main": "index.js",
+  "type": "module",
+  "files": [
+    "index.js",
+    "dist",
+    "README.md"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "vite build",
+    "prepare": "npm run build"
   },
   "keywords": [
     "vite",
     "plugin",
     "qrcode",
     "mobile",
-    "network"
+    "network",
+    "development",
+    "dev-server",
+    "mobile-testing"
   ],
-  "author": "Nivindu Lakshitha",
+  "author": {
+    "name": "Nivindu Lakshitha",
+    "url": "https://github.com/nivindulakshitha"
+  },
   "license": "Creative Commons Zero v1.0 Universal",
   "repository": {
     "type": "git",
     "url": "https://github.com/nivindulakshitha/vinetqr.dev.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nivindulakshitha/vinetqr.dev/issues"
+  },
+  "homepage": "https://github.com/nivindulakshitha/vinetqr.dev#readme",
+  "engines": {
+    "node": ">=14.0.0"
   },
   "dependencies": {
     "qrcode-terminal": "^0.12.0",
@@ -25,5 +46,8 @@
   },
   "devDependencies": {
     "vite": "^6.0.7"
+  },
+  "peerDependencies": {
+    "vite": "^6.0.0"
   }
 }
