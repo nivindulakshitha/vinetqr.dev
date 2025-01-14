@@ -70,6 +70,54 @@ You can customize the behavior of the plugin using the following options:
 
 Each QR code is linked to the corresponding network URL, which you can scan using your phone or tablet to access your local development server.
 
+```
+=== VineQR Dev Server Access ===
+
+For development on VirtualBox Host-Only Network
+  ➜  URL: http://192.168.56.1:5173
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+█ ▄▄▄▄▄ █▄▄▄ ▀█▄█▄█ ▄▄▄▄▄ █
+█ █   █ ██▄▀ █ ▀███ █   █ █
+█ █▄▄▄█ ██▀▄ ▄█████ █▄▄▄█ █
+█▄▄▄▄▄▄▄█ ▀▄█ ▀▄█ █▄▄▄▄▄▄▄█
+█▄▄█ ▄▀▄▀▀▄▀█▄▀█ ▀▀▄█▀▀▀▀▄█
+█▀▀▄▄▀▄▄██▄██▄▄▄ █ ▄▄  ▀▀ █
+█▀██ ██▄ ▀▄ █▀▀▄▀▄▄▄▀▀██▀▄█
+█ ▄▀▄▄ ▄▀▀ ▄█▀▄▄▄ ▄██▀▄ ▄ █
+█▄████▄▄█ ▄  ▄▄ ▀ ▄▄▄ █▄ ██
+█ ▄▄▄▄▄ ████▀▄ ▄█ █▄█ ▄██ █
+█ █   █ █ ▀▄▄ ██▄▄▄  ▄ █▀▀█
+█ █▄▄▄█ █▀▀ ▄▀▄▀▀█▀▀▀ █   █
+█▄▄▄▄▄▄▄█▄▄█▄██▄▄▄█▄██▄██▄█
+
+For development on Wi-Fi
+  ➜  URL: http://192.168.1.2:5173
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+█ ▄▄▄▄▄ █▄▀▀▄▄▄▀█▄█ ▄▄▄▄▄ █
+█ █   █ ███▄█  ▀▀▀█ █   █ █
+█ █▄▄▄█ ██▄▀▄▀ ████ █▄▄▄█ █
+█▄▄▄▄▄▄▄█ █ ▀▄▀ █▄█▄▄▄▄▄▄▄█
+█▄ ▀  ▀▄██ ▄▄▀██ ▀▀▄█▀▀▀▀▄█
+█ ▄▀ █▀▄▄▀▀  ▀█▀ █ ▄▄  ▀▀ █
+█ ▀ ▄█▀▄ █ █▄▄▀▄▀▄▄▄▀▀██▀▄█
+█ ▄█ ▀█▄▀▄ █ ▄▄█▄ ▄██▀▄ ▄ █
+█▄██▄▄▄▄█▀▀ ▀▀▄ ▀ ▄▄▄ █▄ ██
+█ ▄▄▄▄▄ ██▄▀▄▀▀██ █▄█ ▄█▀▄█
+█ █   █ █ ▀██▄██▄▄▄  ▄ █  █
+█ █▄▄▄█ █▀▄▄█▄▄ ▀█▀▀▀ █   █
+█▄▄▄▄▄▄▄█▄█▄█▄▄▄▄▄█▄██▄██▄█
+
+===============================
+
+2:23:08 PM [vite] server restarted.
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: http://192.168.56.1:5173/
+  ➜  Network: http://192.168.1.2:5173/
+```
+
 ## Usage
 
 Once the plugin is installed and configured, it will automatically show the QR codes when you run `vite dev` or start your development server.
