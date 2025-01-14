@@ -32,6 +32,15 @@ jobs:
       - name: Check npm configuration
         run: npm config list 
 
+      - name: Verify secret is set
+        run: |
+          if [ -z "$NODE_AUTH_TOKEN" ]; then
+            echo "NODE_AUTH_TOKEN is not set"
+            exit 1
+          else
+            echo "NODE_AUTH_TOKEN is set"
+          fi
+
       - name: Publish to npm
         run: |
           npm publish
