@@ -28,6 +28,8 @@ yarn add --dev vinetqr-dev-plugin
 After installing the plugin, you need to add it to your Vite configuration file (`vite.config.js` or `vite.config.ts`).
 
 ### Example Configuration
+> [!NOTE]
+> Setting up options ie. smallQR, showAllNetworks, logLevel  for the plugin is optional here.
 
 ```javascript
 import { defineConfig } from 'vite';
