@@ -1,7 +1,18 @@
-const qrcode = require('qrcode-terminal');
-const os = require('os');
-const chalk = require('chalk');
+import { generate } from 'qrcode-terminal';
+import { networkInterfaces as _networkInterfaces } from 'os';
+import { red, cyan, yellow, green } from 'chalk';
 
+/**
+ * A Vite plugin that generates QR codes for accessing the development server
+ * over the network. The QR code is displayed in the terminal when the
+ * development server is started.
+ *
+ * @param {object} [options] - The plugin options
+ * @param {boolean} [options.smallQR=true] - Set to false to use a larger QR code
+ * @param {boolean} [options.showAllNetworks=false] - Set to true to show QR codes for all network interfaces, including internal ones
+ * @param {string} [options.logLevel='info'] - The log level to use. Set to 'debug' to show debug-level logs
+ * @returns {import('vite').Plugin} The Vite plugin
+ */
 function vinetQrDevPlugin(options = {}) {
 	const {
 		smallQR = true,
@@ -26,7 +37,7 @@ function vinetQrDevPlugin(options = {}) {
 					config.server = config.server || {};
 					config.server.host = config.server.host || true;
 				} catch (error) {
-					console.error(chalk.red('Error configuring server:', error.message));
+					console.error(red('Error configuring server:', error.message));
 				}
 			}
 		},
@@ -38,13 +49,13 @@ function vinetQrDevPlugin(options = {}) {
 			server.httpServer?.once('listening', () => {
 				try {
 					const { port } = server.config.server;
-					const networkInterfaces = os.networkInterfaces();
+					const networkInterfaces = _networkInterfaces();
 
 					if (!networkInterfaces) {
 						throw new Error('Unable to get network interfaces');
 					}
 
-					console.log(chalk.cyan('\n=== VineQR Dev Server Access ===\n'));
+					console.log(cyan('\n=== VineQR Dev Server Access ===\n'));
 
 					let hasDisplayedQR = false;
 
@@ -53,10 +64,10 @@ function vinetQrDevPlugin(options = {}) {
 							if (net.family === 'IPv4' && (!net.internal || showAllNetworks)) {
 								const url = `http://${net.address}:${port}`;
 								
-								console.log(chalk.yellow(`For development on ${interfaceName}`));
-								console.log(chalk.green(`  ➜  URL: ${url}\n`));
+								console.log(yellow(`For development on ${interfaceName}`));
+								console.log(green(`  ➜  URL: ${url}\n`));
 
-								qrcode.generate(url, {
+								generate(url, {
 									small: smallQR,
 									errorLevel: 'M'
 								});
@@ -66,13 +77,13 @@ function vinetQrDevPlugin(options = {}) {
 					}
 
 					if (!hasDisplayedQR) {
-						console.log(chalk.yellow('No suitable network interface found for QR code generation'));
+						console.log(yellow('No suitable network interface found for QR code generation'));
 					}
 
-					console.log(chalk.cyan('===============================\n'));
+					console.log(cyan('===============================\n'));
 
 				} catch (error) {
-					console.error(chalk.red('Error generating QR code:', error.message));
+					console.error(red('Error generating QR code:', error.message));
 					if (logLevel === 'debug') {
 						console.error(error.stack);
 					}
@@ -80,10 +91,10 @@ function vinetQrDevPlugin(options = {}) {
 			});
 
 			server.httpServer?.on('error', (error) => {
-				console.error(chalk.red('Server error:', error.message));
+				console.error(red('Server error:', error.message));
 			});
 		},
 	};
 }
 
-module.exports = vinetQrDevPlugin;
+export default vinetQrDevPlugin;
