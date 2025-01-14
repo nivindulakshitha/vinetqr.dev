@@ -37,6 +37,9 @@ jobs:
           echo "Available secrets:"
           echo "VINETQR_NPM_TOKEN=${{ secrets.VINETQR_NPM_TOKEN }}" || echo "Not set"
 
+      - name: Authenticate with npm
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.VINETQR_NPM_TOKEN }}" > ~/.npmrc
 
       - name: Verify secret is set
         run: |
