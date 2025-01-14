@@ -46,6 +46,8 @@ function vinetQrDevPlugin(options = {}) {
 
 					console.log(chalk.cyan('\n=== VineQR Dev Server Access ===\n'));
 
+					let hasDisplayedQR = false;
+
 					for (const interfaceName in networkInterfaces) {
 						for (const net of networkInterfaces[interfaceName]) {
 							if (net.family === 'IPv4' && (!net.internal || showAllNetworks)) {
