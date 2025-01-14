@@ -70,6 +70,14 @@ You can customize the behavior of the plugin using the following options:
 
 Each QR code is linked to the corresponding network URL, which you can scan using your phone or tablet to access your local development server.
 
+## Usage
+
+Once the plugin is installed and configured, it will automatically show the QR codes when you run `vite dev` or start your development server.
+
+### Example Output:
+
+When you start your development server with `vite`, you will see output similar to the following in your terminal:
+
 ```
 === VineQR Dev Server Access ===
 
@@ -116,28 +124,6 @@ For development on Wi-Fi
   ➜  Local:   http://localhost:5173/
   ➜  Network: http://192.168.56.1:5173/
   ➜  Network: http://192.168.1.2:5173/
-```
-
-## Usage
-
-Once the plugin is installed and configured, it will automatically show the QR codes when you run `vite dev` or start your development server.
-
-### Example Output:
-
-When you start your development server with `vite`, you will see output similar to the following in your terminal:
-
-```
-VITE v6.0.7  ready in 1099 ms
-
-Available network URLs with QR codes:
-
-For development on en0
-  ➜  URL: http://192.168.1.2:5173/
-  [QR code goes here]
-
-For development on en1
-  ➜  URL: http://192.168.56.1:5173/
-  [QR code goes here]
 ```
 
 ### Scanning QR Codes:
