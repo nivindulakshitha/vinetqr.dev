@@ -45,7 +45,7 @@ function vinetQrDevPlugin(options = {}) {
 						throw new Error('Unable to get network interfaces');
 					}
 
-					console.log(cyan('\n=== VineQR Dev Server Access ===\n'));
+					console.log(cyan('\n=== VinetQR Dev Server Access ===\n'));
 
 					let hasDisplayedQR = false;
 
