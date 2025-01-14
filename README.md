@@ -1,4 +1,4 @@
-# vinetqr-dev-plugin
+# VinetQr-dev-plugin ```/vaɪn ɛt kjuː ɑːr dɛv plʌɡɪn/```
 
 A Vite plugin that helps developers easily generate QR codes for accessing their development servers on different network interfaces. It provides an automatic way to display network URLs with QR codes, making it easier to access the development server from any device on the same network.
 
@@ -28,6 +28,8 @@ yarn add --dev vinetqr-dev-plugin
 After installing the plugin, you need to add it to your Vite configuration file (`vite.config.js` or `vite.config.ts`).
 
 ### Example Configuration
+> [!NOTE]
+> Setting up options ie. smallQR, showAllNetworks, logLevel  for the plugin is optional here.
 
 ```javascript
 import { defineConfig } from 'vite';
@@ -77,17 +79,51 @@ Once the plugin is installed and configured, it will automatically show the QR c
 When you start your development server with `vite`, you will see output similar to the following in your terminal:
 
 ```
-VITE v6.0.7  ready in 1099 ms
+=== VineQR Dev Server Access ===
 
-Available network URLs with QR codes:
+For development on VirtualBox Host-Only Network
+  ➜  URL: http://192.168.56.1:5173
 
-For development on en0
-  ➜  URL: http://192.168.1.2:5173/
-  [QR code goes here]
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+█ ▄▄▄▄▄ █▄▄▄ ▀█▄█▄█ ▄▄▄▄▄ █
+█ █   █ ██▄▀ █ ▀███ █   █ █
+█ █▄▄▄█ ██▀▄ ▄█████ █▄▄▄█ █
+█▄▄▄▄▄▄▄█ ▀▄█ ▀▄█ █▄▄▄▄▄▄▄█
+█▄▄█ ▄▀▄▀▀▄▀█▄▀█ ▀▀▄█▀▀▀▀▄█
+█▀▀▄▄▀▄▄██▄██▄▄▄ █ ▄▄  ▀▀ █
+█▀██ ██▄ ▀▄ █▀▀▄▀▄▄▄▀▀██▀▄█
+█ ▄▀▄▄ ▄▀▀ ▄█▀▄▄▄ ▄██▀▄ ▄ █
+█▄████▄▄█ ▄  ▄▄ ▀ ▄▄▄ █▄ ██
+█ ▄▄▄▄▄ ████▀▄ ▄█ █▄█ ▄██ █
+█ █   █ █ ▀▄▄ ██▄▄▄  ▄ █▀▀█
+█ █▄▄▄█ █▀▀ ▄▀▄▀▀█▀▀▀ █   █
+█▄▄▄▄▄▄▄█▄▄█▄██▄▄▄█▄██▄██▄█
 
-For development on en1
-  ➜  URL: http://192.168.56.1:5173/
-  [QR code goes here]
+For development on Wi-Fi
+  ➜  URL: http://192.168.1.2:5173
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+█ ▄▄▄▄▄ █▄▀▀▄▄▄▀█▄█ ▄▄▄▄▄ █
+█ █   █ ███▄█  ▀▀▀█ █   █ █
+█ █▄▄▄█ ██▄▀▄▀ ████ █▄▄▄█ █
+█▄▄▄▄▄▄▄█ █ ▀▄▀ █▄█▄▄▄▄▄▄▄█
+█▄ ▀  ▀▄██ ▄▄▀██ ▀▀▄█▀▀▀▀▄█
+█ ▄▀ █▀▄▄▀▀  ▀█▀ █ ▄▄  ▀▀ █
+█ ▀ ▄█▀▄ █ █▄▄▀▄▀▄▄▄▀▀██▀▄█
+█ ▄█ ▀█▄▀▄ █ ▄▄█▄ ▄██▀▄ ▄ █
+█▄██▄▄▄▄█▀▀ ▀▀▄ ▀ ▄▄▄ █▄ ██
+█ ▄▄▄▄▄ ██▄▀▄▀▀██ █▄█ ▄█▀▄█
+█ █   █ █ ▀██▄██▄▄▄  ▄ █  █
+█ █▄▄▄█ █▀▄▄█▄▄ ▀█▀▀▀ █   █
+█▄▄▄▄▄▄▄█▄█▄█▄▄▄▄▄█▄██▄██▄█
+
+===============================
+
+2:23:08 PM [vite] server restarted.
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: http://192.168.56.1:5173/
+  ➜  Network: http://192.168.1.2:5173/
 ```
 
 ### Scanning QR Codes:
