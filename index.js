@@ -1,6 +1,7 @@
-import { generate } from 'qrcode-terminal';
+import qrcode from 'qrcode-terminal';
 import { networkInterfaces as _networkInterfaces } from 'os';
-import { red, cyan, yellow, green } from 'chalk';
+import chalk from 'chalk';
+const { red, cyan, yellow, green } = chalk;
 
 /**
  * A Vite plugin that generates QR codes for accessing the development server
@@ -22,15 +23,7 @@ function vinetQrDevPlugin(options = {}) {
 
 	return {
 		name: 'vinetqr-dev-plugin',
-		
-		/**
-		 * Configures the Vite server to listen on all available network interfaces
-		 * so that the QR code can be accessed from any device on the same network.
-		 *
-		 * @param {import('vite').UserConfig} config - The Vite configuration
-		 * @param {{command: 'serve'|'build'|'preview'}} [context] - The context of the configuration
-		 * @returns {import('vite').UserConfig} The modified configuration
-		 */
+
 		config(config, { command }) {
 			if (command === 'serve') {
 				try {
@@ -42,9 +35,6 @@ function vinetQrDevPlugin(options = {}) {
 			}
 		},
 
-		/**
-		 * @param {import('vite').ViteDevServer} server
-		 */
 		configureServer(server) {
 			server.httpServer?.once('listening', () => {
 				try {
@@ -63,11 +53,11 @@ function vinetQrDevPlugin(options = {}) {
 						for (const net of networkInterfaces[interfaceName]) {
 							if (net.family === 'IPv4' && (!net.internal || showAllNetworks)) {
 								const url = `http://${net.address}:${port}`;
-								
+
 								console.log(yellow(`For development on ${interfaceName}`));
 								console.log(green(`  ➜  URL: ${url}\n`));
 
-								generate(url, {
+								qrcode.generate(url, {
 									small: smallQR,
 									errorLevel: 'M'
 								});
