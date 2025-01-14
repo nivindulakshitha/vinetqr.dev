@@ -1,9 +1,9 @@
 const qrcode = require('qrcode-terminal');
 const os = require('os');
 
-function vinetQrPlugin() {
+function vinetQrDevPlugin() {
 	return {
-		name: 'vite-qrcode-plugin',
+		name: 'vinetqr-dev-plugin',
 		configureServer(server) {
 			server.httpServer?.once('listening', () => {
 				const { port } = server.config.server;
@@ -25,4 +25,4 @@ function vinetQrPlugin() {
 	};
 }
 
-module.exports = vinetQrPlugin;
+module.exports = vinetQrDevPlugin;
