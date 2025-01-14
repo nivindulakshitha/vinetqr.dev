@@ -1,5 +1,5 @@
 {
-  "name": "vinetqr-dev",
+  "name": "vinetqr-dev-plugin",
   "version": "1.0.0",
   "description": "A Vite plugin to generate QR codes for network URLs",
   "main": "index.js",
