@@ -28,8 +28,10 @@ yarn add --dev vinetqr-dev-plugin
 After installing the plugin, you need to add it to your Vite configuration file (`vite.config.js` or `vite.config.ts`).
 
 ### Example Configuration
+
 > [!NOTE]
 > Setting up options ie. smallQR, showAllNetworks, logLevel  for the plugin is optional here.
+
 
 ```javascript
 import { defineConfig } from 'vite';
@@ -84,42 +86,16 @@ When you start your development server with `vite`, you will see output similar 
 For development on VirtualBox Host-Only Network
   ➜  URL: http://192.168.56.1:5173
 
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-█ ▄▄▄▄▄ █▄▄▄ ▀█▄█▄█ ▄▄▄▄▄ █
-█ █   █ ██▄▀ █ ▀███ █   █ █
-█ █▄▄▄█ ██▀▄ ▄█████ █▄▄▄█ █
-█▄▄▄▄▄▄▄█ ▀▄█ ▀▄█ █▄▄▄▄▄▄▄█
-█▄▄█ ▄▀▄▀▀▄▀█▄▀█ ▀▀▄█▀▀▀▀▄█
-█▀▀▄▄▀▄▄██▄██▄▄▄ █ ▄▄  ▀▀ █
-█▀██ ██▄ ▀▄ █▀▀▄▀▄▄▄▀▀██▀▄█
-█ ▄▀▄▄ ▄▀▀ ▄█▀▄▄▄ ▄██▀▄ ▄ █
-█▄████▄▄█ ▄  ▄▄ ▀ ▄▄▄ █▄ ██
-█ ▄▄▄▄▄ ████▀▄ ▄█ █▄█ ▄██ █
-█ █   █ █ ▀▄▄ ██▄▄▄  ▄ █▀▀█
-█ █▄▄▄█ █▀▀ ▄▀▄▀▀█▀▀▀ █   █
-█▄▄▄▄▄▄▄█▄▄█▄██▄▄▄█▄██▄██▄█
+  [QR code appears here]
 
 For development on Wi-Fi
   ➜  URL: http://192.168.1.2:5173
 
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-█ ▄▄▄▄▄ █▄▀▀▄▄▄▀█▄█ ▄▄▄▄▄ █
-█ █   █ ███▄█  ▀▀▀█ █   █ █
-█ █▄▄▄█ ██▄▀▄▀ ████ █▄▄▄█ █
-█▄▄▄▄▄▄▄█ █ ▀▄▀ █▄█▄▄▄▄▄▄▄█
-█▄ ▀  ▀▄██ ▄▄▀██ ▀▀▄█▀▀▀▀▄█
-█ ▄▀ █▀▄▄▀▀  ▀█▀ █ ▄▄  ▀▀ █
-█ ▀ ▄█▀▄ █ █▄▄▀▄▀▄▄▄▀▀██▀▄█
-█ ▄█ ▀█▄▀▄ █ ▄▄█▄ ▄██▀▄ ▄ █
-█▄██▄▄▄▄█▀▀ ▀▀▄ ▀ ▄▄▄ █▄ ██
-█ ▄▄▄▄▄ ██▄▀▄▀▀██ █▄█ ▄█▀▄█
-█ █   █ █ ▀██▄██▄▄▄  ▄ █  █
-█ █▄▄▄█ █▀▄▄█▄▄ ▀█▀▀▀ █   █
-█▄▄▄▄▄▄▄█▄█▄█▄▄▄▄▄█▄██▄██▄█
+  [QR code appears here]
 
 ===============================
 
-2:23:08 PM [vite] server restarted.
+0:00:00 AM [vite] server restarted.
 
   ➜  Local:   http://localhost:5173/
   ➜  Network: http://192.168.56.1:5173/
