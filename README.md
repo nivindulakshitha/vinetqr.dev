@@ -1,4 +1,4 @@
-# VinetQr-dev-plugin ```/vaɪn ɛt kjuː ɑːr dɛv plʌɡɪn/```
+# VinetQr-dev-plugin ```/vaɪn ɛt kjuː ɑːr/```
 
 A Vite plugin that helps developers easily generate QR codes for accessing their development servers on different network interfaces. It provides an automatic way to display network URLs with QR codes, making it easier to access the development server from any device on the same network.
 
