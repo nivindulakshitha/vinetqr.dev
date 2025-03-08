@@ -81,7 +81,7 @@ Once the plugin is installed and configured, it will automatically show the QR c
 When you start your development server with `vite`, you will see output similar to the following in your terminal:
 
 ```
-=== VineQR Dev Server Access ===
+=== VinetQR Dev Server Access ===
 
 For development on VirtualBox Host-Only Network
   ➜  URL: http://192.168.56.1:5173
